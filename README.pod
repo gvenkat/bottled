@@ -1,0 +1,47 @@
+=pod
+  
+Bottled is an attmpt to create a simple blogging engine
+that runs on App Engine. 
+
+=head2 Goals 
+=over 2
+=item *
+Must be easy to install
+=back
+
+=over 2
+=item *
+Must be easy to configure
+=back
+
+=over 2
+=item *
+Must provide Friendly URLs
+=back
+
+=over 2
+=item *
+Must be easy to administer
+=back
+
+=over 2
+=item *
+Must support tags, categories, and pages
+=back
+
+=over 2
+=item *
+Must support multiple skins or templates
+=back
+
+=over 2
+=item *
+Will use prototype.js, HTML5 and CSS3
+=back
+
+=over 2
+=item *
+Must be easy to extend
+=back
+
+=cut
