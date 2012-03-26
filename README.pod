@@ -5,7 +5,7 @@ that runs on App Engine.
 
 =head2 Goals 
 
-=over 2
+=over
 =item *
 Must be easy to install
 
