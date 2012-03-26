@@ -5,36 +5,31 @@ that runs on App Engine.
 
 =head2 Goals 
 
+=over 2
 =item *
 Must be easy to install
-=back
 
 =item *
 Must be easy to configure
-=back
 
 =item *
 Must provide Friendly URLs
-=back
 
 =item *
 Must be easy to administer
-=back
 
 =item *
 Must support tags, categories, and pages
-=back
 
 =item *
 Must support multiple skins or templates
-=back
 
 =item *
 Will use prototype.js, HTML5 and CSS3
-=back
 
 =item *
 Must be easy to extend
+
 =back
 
 =cut
