@@ -21,7 +21,11 @@ class BottledTestCase( unittest.TestCase ):
   def isNotNone( self, obj ):
     self.assert_( obj is not None )
 
+  def isFalse( self, obj ):
+    self.assert_( obj == False )
 
+  def isTrue( self, obj ):
+    self.assert_( obj == True )
 
   def tearDown( self ):
     self.testbed.deactivate()
