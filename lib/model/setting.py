@@ -3,7 +3,8 @@ from google.appengine.ext import db
 class Setting( db.Model ):
   app_name            = db.StringProperty( required=True )
   app_version         = db.FloatProperty( required=True )
-  allow_registration  = db.BooleanProperty( required=True )
+  app_theme           = db.StringProperty()
+  allow_registration  = db.BooleanProperty()
 
   _cache = None
 

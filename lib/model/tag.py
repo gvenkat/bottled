@@ -13,7 +13,3 @@ class Tag( db.Model ):
   @classmethod
   def all_tags( cls ):
     return [ i.tag for i in cls.all().fetch( cls.count() ) ]
-
-
-
-
