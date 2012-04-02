@@ -2,4 +2,6 @@
 from google.appengine.ext import webapp
 
 class Handler( webapp.RequestHandler ):
-  pass
+
+  def parts( self ):
+    return self.request.path.split( '/' )[1:]

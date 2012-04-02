@@ -8,12 +8,14 @@ sys.path.insert( 0, dirname( __file__ ) + '/lib' )
 from google.appengine.ext import webapp
 from google.appengine.ext.webapp import util
 
-from handlers import *
+from handlers import admin, all
+from handlers.admin import setup
 
 def main():
 
   application = webapp.WSGIApplication(
     [
+      ( '/admin/setup', setup.Setup )
       ( '/admin/?.*', admin.AdminHandler ),
       ( '/.*',        all.AllHandler )
     ],
