@@ -9,12 +9,12 @@ class Setting( db.Model ):
   _cache = None
 
   @classmethod
-  def _fill_cache( cls ):
+  def _fill_cache( cls, force=False ):
 
     # Get only the first entry
     # This model should never have more
     # one entry
-    if cls._cache is None:
+    if cls._cache is None or force is True:
       cls._cache = cls.all().get()
 
   # FIXME: Maybe there's a better way to write these
@@ -37,7 +37,7 @@ class Setting( db.Model ):
 
   @classmethod
   def is_app_setup( cls ):
-    cls._fill_cache()
+    cls._fill_cache( True )
 
     return cls._cache is not None
 

@@ -50,6 +50,8 @@ class SettingTestCase( apptest.BottledTestCase ):
 
 
   def testAppSetup( self ):
+    # Setting.all().get().delete()
+
     self.assert_( Setting.is_app_setup() == False )
 
     Setting(
