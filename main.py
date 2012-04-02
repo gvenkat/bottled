@@ -14,8 +14,8 @@ def main():
 
   application = webapp.WSGIApplication(
     [
-      ( '/admin/*', admin.AdminHandler ),
-      ( '/',        all.AllHandler )
+      ( '/admin/?.*', admin.AdminHandler ),
+      ( '/.*',        all.AllHandler )
     ],
 
     debug=True
