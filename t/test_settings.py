@@ -36,10 +36,30 @@ class SettingTestCase( apptest.BottledTestCase ):
 
 
   def testClassAccessors( self ):
-    pass
+    setting = Setting(
+      app_name = 'Foobar',
+      app_version = 0.01,
+      allow_registration = True
+    )
 
-  def testFetch( self ):
-    pass
+    setting.put()
+
+    self.assertEqual( Setting.all().count(), 1 )
+    self.assertEqual( Setting.name(), 'Foobar' )
+    self.assertEqual( Setting.version(), '0.01' )
+
+
+  def testAppSetup( self ):
+    self.assert_( Setting.is_app_setup() == False )
+
+    Setting(
+      app_name = 'Foobar',
+      app_version = 0.01,
+      allow_registration = True
+    ).put()
+
+    self.assert_( Setting.is_app_setup() == True )
+
 
   def testDestroy( self ):
     pass

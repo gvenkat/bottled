@@ -14,8 +14,8 @@ class Setting( db.Model ):
     # Get only the first entry
     # This model should never have more
     # one entry
-    if _cache is None:
-      _cache = cls.get()
+    if cls._cache is None:
+      cls._cache = cls.all().get()
 
   # FIXME: Maybe there's a better way to write these
   # Accessors
@@ -31,11 +31,15 @@ class Setting( db.Model ):
   def _get_property( cls, prop ):
     cls._fill_cache()
 
-    if _cache is not None:
-      _cache.__get__( prop )
+    if cls._cache is not None:
+      return cls._cache.__dict__[ '_' + prop ]
 
 
+  @classmethod
+  def is_app_setup( cls ):
+    cls._fill_cache()
 
+    return cls._cache is not None
 
 
 
