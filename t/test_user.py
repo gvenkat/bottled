@@ -35,6 +35,21 @@ class UserTestCase( apptest.BottledTestCase ):
     self.assertEquals( user.email(), 'foo@bar.com' )
     self.assert_( users.is_current_user_admin() is True )
 
+  def testUserCreate( self ):
+    self.setup_admin_user()
+    u = users.get_current_user()
 
+    self.isNotNone( u )
 
+    _lu = User(
+      user = u,
+      email = u.email(),
+      is_blog_owner = users.is_current_user_admin()
+    )
+
+    _lu.put()
+
+    self.assertEquals( _lu.email, u.email() )
+    self.assertEquals( User.all().count(), 1 )
+    self.assertEquals( User.all().get().user, u )
 
