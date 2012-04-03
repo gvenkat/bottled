@@ -9,15 +9,16 @@ from google.appengine.ext import webapp
 from google.appengine.ext.webapp import util
 
 from handlers import admin, all
-from handlers.admin import setup
+from handlers.admin import *
+
 
 def main():
 
   application = webapp.WSGIApplication(
     [
-      ( '/admin/setup', setup.Setup )
-      ( '/admin/?.*', admin.AdminHandler ),
-      ( '/.*',        all.AllHandler )
+      ( '/admin/setup',   setup.Setup ),
+      ( '/admin/?.*',     index.AdminHandler ),
+      ( '/.*',            all.AllHandler )
     ],
 
     debug=True

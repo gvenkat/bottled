@@ -1,6 +1,9 @@
-from util.handler import Handler
 
-class Setup( Handler ):
+import base
+
+class Setup( base.Base ):
 
   def get( self ):
-    self.response.out.write( "ABout to set things up" )
+    self.render_template( 'setup.html', { } )
+
+
