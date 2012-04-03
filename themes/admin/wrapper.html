@@ -13,6 +13,22 @@
 
   </head>
   <body>
+
+    {% if show_top_bar %}
+      <div class='navbar'>
+        <div class='navbar-inner'>
+          <div class='container'>
+            <ul class='nav'>
+              <li> <a href='/admin/dashboard'> Dashboard </a> </li>
+              <li> <a href='/admin/new'> New Entry </a> </li>
+              <li> <a href='/admin/all'> All Entries </a> </li>
+              <li> <a href='/admin/settings'> Settings </a> </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    {% endif %}
+
     {{ content }}
   </body>
 </html>

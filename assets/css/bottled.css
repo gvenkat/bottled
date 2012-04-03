@@ -9,3 +9,5 @@
 .show { display: block; }
 .hide { display: none; }
 .save { margin: 10px 0; width: 200px; }
+body { background: #eee; }
+.mn { background: #fff; }
