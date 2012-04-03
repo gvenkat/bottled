@@ -1,1 +1,23 @@
-<h1> A New Blog Entry </h1>
+<div class='content span10 offset2 mn'>
+  <form class='form-horizontal' method='POST' action='/admin/new'>
+
+    <div class='control-group vlarge '>
+      <label class='control-label' for='blog_title'> Blog Title </label>
+      <div class='controls'>
+        <input name="title" class='input-xlarge' type='text' placeholder="Title" />
+      </div>
+    </div>
+
+    <div class='control-group vlarge '>
+      <label class='control-label' for='blog_title'> Blog Title </label>
+      <div class='controls'>
+        <textarea name='entry' class='md'></textarea>
+      </div>
+    </div>
+
+    <div class='control-group vlarge rgt'>
+      <input type='submit' class='btn btn-large btn-primary' value="Post" />
+    </div>
+
+  </form>
+</div>

@@ -32,3 +32,5 @@ class Application( object ):
   @classmethod
   def themes( cls ):
     return setting.Setting.all_themes()
+
+
