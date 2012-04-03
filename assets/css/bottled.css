@@ -1,0 +1,11 @@
+
+.hl { color: #336699 }
+.setup .hero-unit { margin-top: 120px; }
+.form-horizontal .vlarge label, .vlarge input { font-size: 1.5em; }
+.form-horizontal .vlarge input[ type="text" ] {  height: 1.7em; width: 400px; }
+.form-horizontal h2 { margin-bottom: 10px; }
+.m10 { margin: 10px 0; }
+
+.show { display: block; }
+.hide { display: none; }
+.save { margin: 10px 0; width: 200px; }

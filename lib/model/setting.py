@@ -1,4 +1,7 @@
 from google.appengine.ext import db
+import os, os.path
+import application
+
 
 class Setting( db.Model ):
   app_name            = db.StringProperty( required=True )
@@ -9,6 +12,18 @@ class Setting( db.Model ):
   _cache = None
 
   @classmethod
+  def save( cls, d ):
+    _s = Setting(
+      app_name = d[ 'title' ],
+      app_version = application.Application.get_version(),
+      app_theme = d[ 'theme' ],
+      allow_registraion = False
+    )
+
+    _s.put()
+
+
+  @classmethod
   def _fill_cache( cls, force=False ):
 
     # Get only the first entry
@@ -16,6 +31,17 @@ class Setting( db.Model ):
     # one entry
     if cls._cache is None or force is True:
       cls._cache = cls.all().get()
+
+  @classmethod
+  def all_themes( cls ):
+
+    _path = os.path.join(
+      os.path.dirname( __file__ ),
+      '..', '..', 'themes'
+    )
+
+    return [ i for i in os.listdir( _path ) if i != 'admin' ]
+
 
   # FIXME: Maybe there's a better way to write these
   # Accessors

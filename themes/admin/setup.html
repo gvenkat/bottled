@@ -1,1 +1,46 @@
-<h1> This is the setup screen </h1>
+
+<div class='row show-grid setup' id="setup">
+  <div class='span8 offset4 hero-unit'>
+    {% if not is_user_logged_in %}
+      <h1> Welcome to <span class='hl'> Bottled </span> </h1>
+      <p> Before you can setup your blog, you need to be logged in as the admin for this app, go ahead, we'll wait right here </p>
+      <p>
+        <a class='btn btn-primary btn-large' href="{{ login_url }}" > Log in </a>
+      </p>
+    {% else %}
+      <form action='/admin/setup' method='POST' class='form-horizontal' > 
+
+        <h2> Setup <span class='hl'> Bottled </span> </h2>
+  
+        <!-- The persistant progress bar -->
+        <div class='progress progress-success setup-progress'>
+          <div class='bar'>
+          </div>
+        </div>
+
+        <div class='control-group vlarge step show app-name'>
+          <label class='control-label' for='blog_title'> Blog Title </label>
+          <div class='controls'>
+            <input name="title" class='input-xlarge' type='text' placeholder="Blog Title" />
+            <a href='#' class='btn btn-large btn-primary m10 action' data-goto="basic-setup"> Next </a>
+          </div>
+        </div>
+
+        <div class='control-group vlarge step hide basic-setup'>
+          <label class='control-label' for='blog_title'> Theme </label>
+          <div class='controls'>
+            <select name='theme' class='span6'>
+              {% for i in application.themes %}
+                <option value="{{i}}"> {{i}} </option>
+              {% endfor %}
+            </select>
+      
+            <input type='submit' class='btn btn-large btn-primary save' value='Save' />
+
+          </div>
+        </div>
+      </form>
+    {% endif %}
+  </div>
+</div>
+

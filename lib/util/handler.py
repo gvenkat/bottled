@@ -1,8 +1,13 @@
 
 from google.appengine.ext import webapp
 from google.appengine.ext.webapp import template
+from google.appengine.api import users
 
 import os, os.path
+
+import application
+
+
 
 class Handler( webapp.RequestHandler ):
 
@@ -32,7 +37,20 @@ class Handler( webapp.RequestHandler ):
       template
     )
 
+  def _user( self ):
+    return users.get_current_user()
+
   def _render( self, t, d ):
+
+    _d = {
+      "user": self._user(),
+      "is_user_logged_in": ( self._user() is not None ),
+      "login_url": users.create_login_url(),
+      "application": application.Application
+    }
+
+    d.update( _d )
+
     _rendered = template.render(
       self.to_path( t ),
       d
