@@ -13,10 +13,11 @@ class AdminHandler( base.Base ):
       'all'
     ]
 
-    if self.parts()[1] in allowed:
+    if len( self.parts() ) < 2 or not self.parts()[1]:
+      self.dashboard()
+    elif self.parts()[1] in allowed:
       self.__getattribute__( self.parts()[1] )()
     else:
-      # FIXME: To be implemented
       # self.not_found()
       pass
 
