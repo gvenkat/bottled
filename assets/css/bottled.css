@@ -2,7 +2,7 @@
 .hl { color: #336699 }
 .setup .hero-unit { margin-top: 120px; }
 .form-horizontal .vlarge label, .vlarge input { font-size: 1.5em; }
-.form-horizontal .vlarge input[ type="text" ] {  height: 1.7em; width: 400px; }
+.form-horizontal .vlarge input[ type="text" ] {  height: 1.7em; width: 650px; }
 .form-horizontal h2 { margin-bottom: 10px; }
 .m10 { margin: 10px 0; }
 body .navbar { margin-bottom: 0; }
@@ -12,5 +12,7 @@ body .navbar { margin-bottom: 0; }
 .save { margin: 10px 0; width: 200px; }
 body { background: #eee; }
 .mn { background: #fff; padding: 30px 0;  }
-.md { width: 404px; min-height: 300px; }
-.rgt { float: right; margin-right: 200px;  } 
+.md { width: 650px; min-height: 400px; }
+.rgt { float: right; margin-right: 70px;  } 
+.mt10 { margin-top: 15px; }
+.blk { display: block; margin: 10px 0; }

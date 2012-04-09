@@ -42,7 +42,7 @@
         parents( '.control-group' ).
         hide();
 
-      $( '.' + _cls )[0].
+      $( '.' + _cls ).
         removeClass( 'hide' ).
         show();
 

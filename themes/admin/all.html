@@ -5,9 +5,19 @@
         <th> &nbsp; </th>
         <th> Title </th>
         <th> Updated </th>
+        <th> Actions </th>
       </tr>
     </thead>
     <tbody>
+      {% for item in items %}
+        <tr>
+          <td> &nbsp; </td>
+          <td> {{item.title}} </td>
+          <td> {{item.updated_at}} </td> 
+          <td>
+            <a href='/admin/edit?_post={{item.key}}'> Edit </a>
+        </tr>
+      {% endfor %}
     </tbody>
   </table>
 </div>

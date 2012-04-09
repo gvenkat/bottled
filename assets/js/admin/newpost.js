@@ -12,4 +12,12 @@ $( function() {
 
     content_css: "/css/content.css"
   } );
+
+
+  $( '#save' ).click( function( e ) {
+    e.preventDefault();
+    $( '#newpost' ).submit();
+  } );
+
+
 } );

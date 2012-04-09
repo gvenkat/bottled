@@ -1,23 +1,35 @@
-<div class='content span10 offset2 mn'>
-  <form class='form-horizontal' method='POST' action='/admin/new'>
+<form id='newpost' class='form-horizontal' method='POST' action='/admin/new'>
+  <div class='row-fluid'>
+    <div class='content mn span9 '>
+      <div class='control-group vlarge '>
+        <label class='control-label' for='blog_title'> Blog Title </label>
+        <div class='controls'>
+          <input name="title" class='input-xlarge' value="{% if entry %}{{ entry.title }}{% endif %}" type='text' placeholder="Title" />
+        </div>
+      </div>
 
-    <div class='control-group vlarge '>
-      <label class='control-label' for='blog_title'> Blog Title </label>
-      <div class='controls'>
-        <input name="title" class='input-xlarge' type='text' placeholder="Title" />
+      <div class='control-group vlarge '>
+        <label class='control-label' for='blog_title'> Content </label>
+        <div class='controls'>
+          <textarea name='entry' class='md rich'>
+            {% if item %}
+              {{ item.content }}
+            {% endif %}
+          </textarea>
+        </div>
+      </div>
+
+    </div>
+
+    <div class='content span2 '>
+      <div class='well mt10'>
+        <a id='save' name='draft' class='btn btn-primary blk'>
+          <i class='icon-ok'> </i>
+          Save
+        </a>
       </div>
     </div>
+  </div>
 
-    <div class='control-group vlarge '>
-      <label class='control-label' for='blog_title'> Blog Title </label>
-      <div class='controls'>
-        <textarea name='entry' class='md rich'></textarea>
-      </div>
-    </div>
+</form>
 
-    <div class='control-group vlarge rgt'>
-      <input type='submit' class='btn btn-large btn-primary' value="Post" />
-    </div>
-
-  </form>
-</div>
